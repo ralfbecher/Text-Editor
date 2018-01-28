@@ -1,0 +1,9 @@
+ {
+	"name": "Text Editor",
+	"description": "Text Editor using Quill.js library",
+	"icon": "text",
+	"type": "visualization",
+	"version": "1.0.0",
+	"author": "Ryan Arpe, Nick Webster",
+	"keywords": "qlik-sense, visualization"
+}

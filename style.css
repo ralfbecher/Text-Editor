@@ -1,0 +1,30 @@
+.qv-object-TextObject .icon-zoom-in {
+	display: none;
+}
+
+.qv-object-TextObject{
+  width: 100%;
+  height: 100%;
+}
+
+.objectStyle {
+
+}
+
+
+///---delete if doesnt work
+body{
+  background-color: #222;
+  padding:20px;
+}
+
+.container{
+  background-color: whitesmoke;
+}
+
+/* Note: the container needs height for the link button to work */
+
+#myFirstQuill{
+  height: 100%;
+	/* overflow: auto; */
+}

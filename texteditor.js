@@ -183,9 +183,10 @@ function ( qvangular, $, Quill) {
         this.$scope.editor.setContents(layout.quill.text.ops, 'silent')
       }
       if(layout.quill.selection !== "" && layout.quill.selection!=null){
+        var parentscope = angular.element($element).scope().$parent.$parent;
+        $element.html(parentscope.editmode ? this.$scope.editor.enable() : this.$scope.editor.enable(false));
         this.$scope.editor.setSelection(layout.quill.selection)
       }
-
     }
   }
 });

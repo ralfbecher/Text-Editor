@@ -18,7 +18,7 @@ function ( qvangular, $, Quill) {
           uses: "settings",
           type: "items",
           items: {
-            Text: {
+            Texts: {
               ref: "quill.text",
               type: "object",
               show: false
@@ -26,100 +26,8 @@ function ( qvangular, $, Quill) {
             Selection: {
               ref: "quill.selection",
               type: "object",
-              show: false
+            show: false
             },
-            Background: {
-              ref: "background",
-              label: "Background",
-              type: "items",
-              items: {
-                backgroundtype: {
-                  type: "string",
-                  component: "buttongroup",
-                  ref: "bgtype",
-                  options: [{
-                    value: "color",
-                    label: "Color",
-                    tooltip: "Choose to pick a color"
-                  }, {
-                    value: "image",
-                    label: "Image",
-                    tooltip: "Choose to upload image"
-                  }, {
-                    value: "url",
-                    label: "URL",
-                    tooltip: "Embed URL"
-                  }],
-                  defaultValue: "color"
-                },
-                BGColorPicker: {
-                  type: "object",
-                  label: "Background Color",
-                  component: "color-picker",
-                  dualOuput: true,
-                  ref: "bgColor",
-                  show: function(layout) {
-                    return "color" == layout.bgtype
-                  },
-                  defaultValue: "#ffffff"
-                },
-                backgroundimage: {
-                  label: "Image",
-                  component: "media",
-                  ref: "bgimage",
-                  layoutRef: "bgimage",
-                  type: "string",
-                  show: function(layout) {
-                    return "image" == layout.bgtype
-                  }
-                },
-                imagestretch: {
-                  label: "Image Stretch",
-                  type: "string",
-                  ref: "imagestretch",
-                  component: "dropdown",
-                  options: [{
-                    value: "nostretch",
-                    label: "No Stretch"
-                  }, {
-                    value: "fill",
-                    label: "Fill"
-                  }, {
-                    value: "keepaspect",
-                    label: "Keep Aspect"
-                  }, {
-                    value: "fillwithaspect",
-                    label: "Fill with Aspect"
-                  }],
-                  defaultValue: "nostretch",
-                  show: function(layout) {
-                    return "image" == layout.bgtype
-                  }
-                },
-                backgroundtransparency: {
-                  type: "number",
-                  component: "slider",
-                  label: "Transparency",
-                  ref: "backgroundtransparency",
-                  min: 0,
-                  max: 1,
-                  step: 0.1,
-                  defaultValue: 1,
-                  show: function(layout) {
-                    return "url" != layout.bgtype
-                  }
-                },
-                iframeurl: {
-                  ref: "iframeurl",
-                  label: "URL",
-                  type: "string",
-                  defaultValue: "https://",
-                  show: function(layout) {
-                    return "url" == layout.bgtype
-                  }
-                }
-              }
-            }
           }
         }
       }
